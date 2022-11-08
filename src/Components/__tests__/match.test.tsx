@@ -80,8 +80,8 @@ test("check whether Load Players button is clickable or show list of data", asyn
   (axios.get as jest.Mock).mockReturnValue(response);
 
   const component = render(<Match />, { wrapper: BrowserRouter });
-  const button = component.getByTestId("loadmatches"); //.parentElement!;
-  fireEvent.click(button);
+  // const button = component.getByTestId("loadmatches"); //.parentElement!;
+  // fireEvent.click(button);
   await waitFor(() => {
     const playerName = screen.getByTestId("un-orderlist");
     console.log("cardElement :", playerName.textContent);
@@ -141,8 +141,8 @@ test("check whether Load Players button is clickable and show empty list", async
   (axios.get as jest.Mock).mockRejectedValue(response);
 
   const component = render(<Match />, { wrapper: BrowserRouter });
-  const button = component.getByTestId("loadmatches"); //.parentElement!;
-  fireEvent.click(button);
+  // const button = component.getByTestId("loadmatches"); //.parentElement!;
+  // fireEvent.click(button);
   await waitFor(() => {
     const playerName = screen.getByTestId("un-orderlist");
     console.log("cardElement :", playerName.textContent);
@@ -167,8 +167,8 @@ test("should delete match successful", async () => {
   (axios.get as jest.Mock).mockReturnValue(response);
   (axios.delete as jest.Mock).mockReturnValue(response);
   const component = render(<Match />, { wrapper: BrowserRouter });
-  const button = component.getByTestId("loadmatches"); //.parentElement!;
-  fireEvent.click(button);
+  // const button = component.getByTestId("loadmatches"); //.parentElement!;
+  // fireEvent.click(button);
   await waitFor(() => {
     const playerName = component.getByTestId("un-orderlist");
     const AllCards = component.getAllByTestId("card-id")[0];
@@ -216,8 +216,8 @@ test("should delete match failed", async () => {
   (axios.delete as jest.Mock).mockRejectedValue(response2);
 
   const component = render(<Match />, { wrapper: BrowserRouter });
-  const button = component.getByTestId("loadmatches"); //.parentElement!;
-  fireEvent.click(button);
+  // const button = component.getByTestId("loadmatches"); //.parentElement!;
+  // fireEvent.click(button);
   await waitFor(() => {
     const playerName = component.getByTestId("un-orderlist");
     const AllCards = component.getAllByTestId("card-id")[0];

@@ -109,6 +109,7 @@ function AddPlayer() {
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
           data-testid="addplayerbutton"
+          onClick={CreateNewPlayer}
         >
           AddPlayer
         </Button>
