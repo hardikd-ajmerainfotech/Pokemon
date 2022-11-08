@@ -10,7 +10,7 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import AddPlayer from "../AddPlayer";
+import AddPlayer from "../Components/AddPlayer";
 
 jest.mock("axios");
 jest.mock("react-toastify", () => ({

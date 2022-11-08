@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
-import Navbar from "../NavBar";
+import Navbar from "../Components/NavBar";
 
 describe("first", () => {
   beforeEach(() => {

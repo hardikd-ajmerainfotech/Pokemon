@@ -7,7 +7,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Match from "../Match";
+import Match from "../Components/Match";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
 import { toast } from "react-toastify";

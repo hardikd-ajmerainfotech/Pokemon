@@ -7,7 +7,7 @@ import {
 } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-import Login from "../Login";
+import Login from "../Components/Login";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import { toast } from "react-toastify";

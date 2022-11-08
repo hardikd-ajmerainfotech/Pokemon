@@ -10,10 +10,10 @@ import axios from "axios";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
-import DeleteDialog from "../DeleteDialog";
-import Loading from "../Loading";
-import Navbar from "../NavBar";
-import Player from "../Player";
+import DeleteDialog from "../Components/DeleteDialog";
+import Loading from "../Components/Loading";
+import Navbar from "../Components/NavBar";
+import Player from "../Components/Player";
 
 jest.mock("axios");
 interface player {

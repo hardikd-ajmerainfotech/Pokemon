@@ -11,7 +11,7 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import AddMatch from "../AddMatch";
+import AddMatch from "../Components/AddMatch";
 
 jest.mock("axios");
 jest.mock("react-toastify", () => ({

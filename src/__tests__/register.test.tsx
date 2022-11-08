@@ -5,7 +5,7 @@ import axios from "axios";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
-import Register from "../Register";
+import Register from "../Components/Register";
 jest.mock("react-toastify", () => ({
   toast: {
     success: jest.fn(),
