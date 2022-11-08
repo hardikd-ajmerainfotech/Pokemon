@@ -1,7 +1,6 @@
 import {
   act,
   fireEvent,
-  getByRole,
   render,
   screen,
   waitFor,
@@ -13,17 +12,6 @@ import { BrowserRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import AddMatch from "../AddMatch";
-import {
-  Box,
-  Button,
-  Container,
-  CssBaseline,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
 
 jest.mock("axios");
 jest.mock("react-toastify", () => ({
