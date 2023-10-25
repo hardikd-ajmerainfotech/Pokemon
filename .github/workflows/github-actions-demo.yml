@@ -1,11 +1,9 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Get Agent IP
 on: [push]
+
 jobs:
-  Explore-GitHub-Actions:
+  get-agent-ip:
     runs-on: self-hosted
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
     - name: Get Agent IP
-      run: echo "::set-output name=agent_ip::$(curl -s https://api.ipify.org/)"
+      run: echo "Agent IP is $(curl -s https://api.ipify.org/)"
