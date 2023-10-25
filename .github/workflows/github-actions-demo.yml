@@ -3,7 +3,9 @@ on: [push]
 
 jobs:
   get-agent-ip:
-    runs-on: self-hosted
+    runs-on: windows-2019
     steps:
     - name: Get Agent IP
-      run: echo "Agent IP is $(curl -s https://api.ipify.org/)"
+      run: |
+        $ip = (Invoke-WebRequest -Uri "https://api.ipify.org" -UseBasicParsing).Content
+        Write-Output "Agent IP is $ip"
