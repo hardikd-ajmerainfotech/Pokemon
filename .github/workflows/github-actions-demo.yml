@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   get-agent-ip:
-    runs-on: windows-2019
+    runs-on: self-hosted
     steps:
     - name: Get Agent IP
       run: |
