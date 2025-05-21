@@ -117,7 +117,7 @@ export function Match(): JSX.Element {
                           sx={{ maxWidth: 255 }}
                           style={{
                             marginTop: "10",
-                            backgroundColor: "rgb(195 186 169)",
+                            backgroundColor: "var(--card-bg-alt)", // Updated
                             width: "400px",
                           }}
                           data-testid="card-id"
@@ -168,8 +168,12 @@ export function Match(): JSX.Element {
               marginTop: "5%",
               marginBottom: "10%",
               marginLeft: "45%",
-              color: "#9d7506",
+              color: "var(--button-text)", // Updated
+              backgroundColor: "var(--button-bg)", // Updated
+              border: "1px solid var(--button-border-color)", // Added for consistency
               width: "120px",
+              padding: "8px 16px", // Added for better appearance
+              borderRadius: "4px", // Added for better appearance
             }}
           >
             Add Match

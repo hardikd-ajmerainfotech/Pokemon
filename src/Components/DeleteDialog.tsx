@@ -80,7 +80,16 @@ export default function AlertDialogSlide({
 
   return (
     <div >
-      <Button variant="contained" onClick={handleClickOpen} data-testid="delete"  >
+      <Button 
+        variant="contained" 
+        onClick={handleClickOpen} 
+        data-testid="delete"
+        sx={{ // Updated
+          backgroundColor: 'var(--button-bg)', 
+          color: 'var(--button-text)',
+          '&:hover': { backgroundColor: 'var(--button-hover-bg)' } 
+        }}
+      >
         Delete
       </Button>
       <Dialog
@@ -89,18 +98,40 @@ export default function AlertDialogSlide({
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
+        PaperProps={{ // Updated
+          sx: { 
+            backgroundColor: 'var(--card-bg)', 
+            color: 'var(--text-color)' 
+          } 
+        }}
       >
-        <DialogTitle>{"Delete item"}</DialogTitle>
+        <DialogTitle sx={{ color: 'var(--text-color)' }}> {/* Updated */}
+          {"Delete item"}
+        </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
+          <DialogContentText id="alert-dialog-slide-description" sx={{ color: 'var(--text-color)' }}> {/* Updated */}
             Are you sure ?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} data-testid="disagreebutton">
+          <Button 
+            onClick={handleClose} 
+            data-testid="disagreebutton"
+            sx={{ // Updated
+              color: 'var(--text-color)', 
+              '&:hover': { backgroundColor: `rgba(${'var(--text-color-rgb)'}, 0.08)` } 
+            }}
+          >
             Disagree
           </Button>
-          <Button onClick={handleDelete} data-testid="agreebutton">
+          <Button 
+            onClick={handleDelete} 
+            data-testid="agreebutton"
+            sx={{ // Updated
+              color: 'var(--link-color)', 
+              '&:hover': { backgroundColor: `rgba(${'var(--link-color-rgb)'}, 0.08)` } 
+            }}
+          >
             Agree
           </Button>
         </DialogActions>

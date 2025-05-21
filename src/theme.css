@@ -1,0 +1,140 @@
+:root {
+  --body-bg: #fbfbfb;
+  --text-color: #000000;
+  --text-color-rgb: 0,0,0; /* New RGB variable */
+  --navbar-bg: #436895;
+  --navbar-text: #f3f9ff;
+  --button-bg: #e0e0e0;
+  --button-text: #000000;
+  --button-border-color: var(--button-bg);
+  --button-hover-bg: #d0d0d0; /* New hover variable */
+  --link-color: #007bff;
+  --link-color-rgb: 0,123,255; /* New RGB variable */
+
+  /* New variables for forms/cards */
+  --card-bg: #ffffff;
+  --card-bg-alt: #cdcdcd; /* For Register form's slightly different bg */
+  --card-box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  --input-bg: #ffffff;
+  --input-border-color: #ced4da;
+  --input-text-color: #495057;
+  --placeholder-text-color: #6c757d;
+
+  /* Toast variables */
+  --toast-bg: #ffffff;
+  --toast-text-color: #333333;
+  --toast-success-bg: #e6fffa;
+  --toast-success-text-color: #004d40;
+  --toast-error-bg: #ffebee;
+  --toast-error-text-color: #c62828;
+}
+
+.dark-theme {
+  --body-bg: #121212;
+  --text-color: #ffffff;
+  --text-color-rgb: 255,255,255; /* New RGB variable - Dark */
+  --navbar-bg: #1e1e1e;
+  --navbar-text: #ffffff;
+  --button-bg: #555555; /* Darker button for better contrast on dark bg */
+  --button-text: #ffffff;
+  --button-border-color: var(--button-bg);
+  --button-hover-bg: #454545; /* New hover variable - Dark */
+  --link-color: #bb86fc;
+  --link-color-rgb: 187,134,252; /* New RGB variable - Dark */
+
+  /* New variables for forms/cards - Dark */
+  --card-bg: #2c2c2c;
+  --card-bg-alt: #3a3a3a;
+  --card-box-shadow: 0px 0px 10px rgba(255,255,255,0.05);
+  --input-bg: #3a3a3a;
+  --input-border-color: #555555;
+  --input-text-color: #e0e0e0;
+  --placeholder-text-color: #888888;
+
+  /* Toast variables - Dark */
+  --toast-bg: var(--card-bg); /* Align with card background */
+  --toast-text-color: var(--text-color); /* Align with general text color */
+  --toast-success-bg: #1a3c32; 
+  --toast-success-text-color: #a7f3d0;
+  --toast-error-bg: #4c1c1c;
+  --toast-error-text-color: #fecaca;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Bootstrap Overrides for Dark Theme */
+.dark-theme .form-control, /* Standard Bootstrap input */
+.dark-theme .form__input,  /* Custom class from Login/Register */
+.dark-theme .form_input   /* Custom class typo from Register */ {
+  background-color: var(--input-bg);
+  color: var(--input-text-color);
+  border: 1px solid var(--input-border-color);
+}
+
+.dark-theme .form-control::placeholder,
+.dark-theme .form__input::placeholder,
+.dark-theme .form_input::placeholder {
+  color: var(--placeholder-text-color);
+}
+
+/* General button styling (assuming .btn is used) */
+.dark-theme .btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-border-color);
+}
+
+/* Specific Bootstrap class overrides if needed */
+.dark-theme .bg-dark {
+  background-color: var(--navbar-bg) !important; /* Override Bootstrap's !important if necessary */
+}
+
+.dark-theme .text-white {
+  color: var(--navbar-text) !important; /* Override Bootstrap's !important if necessary */
+}
+
+/* Styling for the form containers if they were generic .card */
+.dark-theme .card { /* If Login/Register forms were using .card class */
+  background-color: var(--card-bg);
+  border-color: var(--input-border-color); /* Or a specific card border color */
+}
+
+/* React Toastify Dark Theme Overrides */
+.dark-theme .Toastify__toast-container .Toastify__toast {
+  background-color: var(--toast-bg);
+  color: var(--toast-text-color);
+  box-shadow: var(--card-box-shadow); /* Use card shadow for consistency */
+}
+
+.dark-theme .Toastify__toast-container .Toastify__toast--success {
+  background-color: var(--toast-success-bg);
+  color: var(--toast-success-text-color);
+}
+
+.dark-theme .Toastify__toast-container .Toastify__toast--error {
+  background-color: var(--toast-error-bg);
+  color: var(--toast-error-text-color);
+}
+
+.dark-theme .Toastify__toast-container .Toastify__close-button {
+  color: var(--toast-text-color);
+  opacity: 0.7; /* Default is 0.3, make it more visible */
+}
+.dark-theme .Toastify__toast-container .Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Optional: Style progress bar if needed */
+.dark-theme .Toastify__progress-bar {
+  background: var(--link-color); /* Use link color for progress bar */
+}
+.dark-theme .Toastify__progress-bar--success {
+  background: var(--toast-success-text-color); /* Or a specific success progress color */
+}
+.dark-theme .Toastify__progress-bar--error {
+  background: var(--toast-error-text-color); /* Or a specific error progress color */
+}
