@@ -44,7 +44,7 @@ function AddPlayer() {
   };
 
   return (
-    <div style={{ border: "3px solid black", marginTop: "20%", width: "100%" }}>
+    <div style={{ border: "3px solid var(--input-border-color)", marginTop: "20%", width: "100%" }}> {/* Updated border */}
       <Navbar />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -68,7 +68,16 @@ function AddPlayer() {
           margin="normal"
           required
           fullWidth
-          style={{ backgroundColor: "#cbcecf" }}
+          sx={{ // Updated
+            backgroundColor: 'var(--input-bg)',
+            '.MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: 'var(--input-border-color)' },
+              '&:hover fieldset': { borderColor: 'var(--link-color)' },
+              '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+            },
+            '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+            input: { color: 'var(--input-text-color)' }
+          }}
           label="First Name"
           placeholder="First Name"
           onChange={(e) => {
@@ -87,7 +96,16 @@ function AddPlayer() {
           onChange={(e) => {
             setLastName(e.target.value);
           }}
-          style={{ backgroundColor: "#cbcecf" }}
+          sx={{ // Updated
+            backgroundColor: 'var(--input-bg)',
+            '.MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: 'var(--input-border-color)' },
+              '&:hover fieldset': { borderColor: 'var(--link-color)' },
+              '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+            },
+            '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+            input: { color: 'var(--input-text-color)' }
+          }}
         ></TextField>
 
         <TextField
@@ -95,7 +113,16 @@ function AddPlayer() {
           required
           fullWidth
           label="Age"
-          style={{ backgroundColor: "#cbcecf" }}
+          sx={{ // Updated
+            backgroundColor: 'var(--input-bg)',
+            '.MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: 'var(--input-border-color)' },
+              '&:hover fieldset': { borderColor: 'var(--link-color)' },
+              '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+            },
+            '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+            input: { color: 'var(--input-text-color)' }
+          }}
           type="text"
           placeholder="Age"
           onChange={(e) => {
@@ -107,7 +134,13 @@ function AddPlayer() {
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ // Updated
+            mt: 3, 
+            mb: 2,
+            backgroundColor: 'var(--button-bg)', 
+            color: 'var(--button-text)',
+            '&:hover': { backgroundColor: 'var(--button-hover-bg)' } 
+          }}
           data-testid="addplayerbutton"
           onClick={CreateNewPlayer}
         >

@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function Navbar(props: any) {
+  const themeContext = useContext(ThemeContext);
+
+  if (!themeContext) {
+    return null; // Should not happen with the current ThemeProvider setup
+  }
+
+  const { theme, toggleTheme } = themeContext;
+
   return (
     <div>
       <header
         className="Navbar"
         style={{
-          backgroundColor: "#436895",
+          backgroundColor: "var(--navbar-bg)", // Updated
           position: "fixed",
           top: "0",
           left: "auto",
@@ -18,7 +27,7 @@ function Navbar(props: any) {
           fontFamily: "sans-serif",
           width: "100%",
           zIndex: "1000",
-          boxShadow: "0px 0px 5px #cdadad",
+          boxShadow: "0px 0px 5px #cdadad", // This could also be themed if desired
         }}
         data-testid="header"
       >
@@ -35,14 +44,18 @@ function Navbar(props: any) {
           <div
             className="Title"
             data-testid="navbarAppName"
-            style={{ flexGrow: "1" ,color: "#f3f9ff"}}
+            style={{ flexGrow: "1", color: "var(--navbar-text)" }} // Updated
           >
             Cricket Match App{" "}
           </div>
           <div>
             <NavLink to="/match">
               <button
-                style={{ marginRight: "10px" }}
+                style={{
+                  marginRight: "10px",
+                  backgroundColor: "var(--button-bg)", // Updated
+                  color: "var(--button-text)", // Updated
+                }}
                 data-testid="matchbuttononnavbar"
               >
                 {" "}
@@ -51,7 +64,11 @@ function Navbar(props: any) {
             </NavLink>
             <NavLink to="/player">
               <button
-                style={{ marginRight: "10px" }}
+                style={{
+                  marginRight: "10px",
+                  backgroundColor: "var(--button-bg)", // Updated
+                  color: "var(--button-text)", // Updated
+                }}
                 data-testid="playerbuttononnavbar"
               >
                 {" "}
@@ -60,13 +77,28 @@ function Navbar(props: any) {
             </NavLink>
             <NavLink to="/login">
               <button
-                style={{ marginRight: "10px" }}
+                style={{
+                  marginRight: "10px",
+                  backgroundColor: "var(--button-bg)", // Updated
+                  color: "var(--button-text)", // Updated
+                }}
                 data-testid="loginbuttononnavbar"
               >
                 {" "}
                 Login{" "}
               </button>
             </NavLink>
+            <button
+              onClick={toggleTheme}
+              style={{
+                marginRight: "10px",
+                backgroundColor: "var(--button-bg)",
+                color: "var(--button-text)",
+              }}
+              data-testid="theme-toggle-button"
+            >
+              {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            </button>
           </div>
         </div>
       </header>

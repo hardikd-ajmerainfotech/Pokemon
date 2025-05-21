@@ -54,17 +54,18 @@ function Register(): JSX.Element {
     <>
       <div style={{ justifyContent: "center" }}>
         <nav
-          className="bg-dark navbar-dark navbar"
+          className="bg-dark navbar-dark navbar" // These classes are now themed by src/theme.css
           style={{ marginTop: "200px", justifyContent: "center" }}
         >
-          <div className="row col-12 d-flex justify-content-center text-white">
+          <div className="row col-12 d-flex justify-content-center text-white"> {/* text-white is themed */}
             <h3 data-testid="registration">Registration</h3>
           </div>
         </nav>
         <div
-          className="form"
+          className="form" // We can add a class like 'themed-card' if we define it in theme.css
           style={{
-            backgroundColor: "rgb(205 205 205)",
+            backgroundColor: "var(--card-bg-alt)", // Use CSS variable for the alternate card background
+            boxShadow: "var(--card-box-shadow)", // Use CSS variable
             borderRadius: "5px",
             width: "550px",
             margin: "20px auto",
@@ -77,29 +78,29 @@ function Register(): JSX.Element {
           >
             <div className="username">
               <label
-                className="form__label"
+                className="form__label" // Style this class globally or ensure text color is inherited
                 htmlFor="firstName"
                 data-testid="firstnamelabel"
-                style={{ width: "40%", padding: "5px" }}
+                style={{ width: "40%", padding: "5px", color: "var(--text-color)" }} // Added text color
               >
                 First Name
               </label>
               <input
-                className="form__input"
+                className="form__input" // This class is styled in theme.css
                 type="text"
                 id="firstName"
                 placeholder="First Name"
                 onChange={(e) => {
                   setUserName(e.target.value);
                 }}
-                style={{ width: "60%" }}
+                style={{ width: "60%" }} // Layout style, can remain
               />
             </div>
             <div className="email">
               <label
-                className="form__label"
+                className="form__label" // Style this class globally or ensure text color is inherited
                 htmlFor="email"
-                style={{ width: "40%", padding: "5px" }}
+                style={{ width: "40%", padding: "5px", color: "var(--text-color)" }} // Added text color
                 data-testid="emaillabel"
               >
                 Email
@@ -107,32 +108,32 @@ function Register(): JSX.Element {
               <input
                 type="email"
                 id="email"
-                className="form__input"
+                className="form__input" // This class is styled in theme.css
                 placeholder="Email"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
-                style={{ width: "60%" }}
+                style={{ width: "60%" }} // Layout style, can remain
               />
             </div>
             <div className="password">
               <label
-                className="form__label"
+                className="form__label" // Style this class globally or ensure text color is inherited
                 htmlFor="password"
-                style={{ width: "40%", padding: "5px" }}
+                style={{ width: "40%", padding: "5px", color: "var(--text-color)" }} // Added text color
                 data-testid="passwordlabel"
               >
                 Password
               </label>
               <input
-                className="form_input"
+                className="form__input" // Corrected typo from form_input and styled in theme.css
                 type="password"
                 id="password"
                 placeholder="Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-                style={{ width: "60%" }}
+                style={{ width: "60%" }} // Layout style, can remain
               />
             </div>
           </div>

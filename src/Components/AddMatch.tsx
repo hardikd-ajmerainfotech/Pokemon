@@ -110,7 +110,7 @@ function AddMatch() {
   };
   return (
     <>
-      <div style={{border: "2px solid black", marginTop: "20%", width: "100%"}}>
+      <div style={{border: "2px solid var(--input-border-color)", marginTop: "20%", width: "100%"}}> {/* Updated border */}
         {/* <Protected /> */}
         <Navbar />
         <Container component="main" maxWidth="xs">
@@ -140,7 +140,16 @@ function AddMatch() {
                 onChange={handleChange}
                 autoFocus
                 data-testid="matchName"
-                style={{ backgroundColor: "#cbcecf" }}
+                sx={{ // Updated
+                  backgroundColor: 'var(--input-bg)',
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'var(--input-border-color)' },
+                    '&:hover fieldset': { borderColor: 'var(--link-color)' },
+                    '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+                  },
+                  '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+                  input: { color: 'var(--input-text-color)' }
+                }}
               />
               <TextField
                 margin="normal"
@@ -152,15 +161,31 @@ function AddMatch() {
                 type="string"
                 id="totalAudience"
                 onChange={handleChange}
-                style={{ backgroundColor: "#cbcecf" }}
+                sx={{ // Updated
+                  backgroundColor: 'var(--input-bg)',
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'var(--input-border-color)' },
+                    '&:hover fieldset': { borderColor: 'var(--link-color)' },
+                    '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+                  },
+                  '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+                  input: { color: 'var(--input-text-color)' }
+                }}
               />
 
               <FormControl
-                sx={{
+                sx={{ // Updated
                   mt: 1,
                   minWidth: "100%",
                   maxWidth: "100%",
-                  backgroundColor: "#cbcecf",
+                  backgroundColor: 'var(--input-bg)',
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'var(--input-border-color)' },
+                    '&:hover fieldset': { borderColor: 'var(--link-color)' },
+                    '&.Mui-focused fieldset': { borderColor: 'var(--link-color)' },
+                  },
+                  '.MuiInputLabel-root': { color: 'var(--placeholder-text-color)' },
+                  '.MuiSelect-select': { color: 'var(--input-text-color)' }
                 }}
               >
                 <InputLabel id="demo-simple-select-helper-label" required>
@@ -194,7 +219,13 @@ function AddMatch() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                  sx={{ // Updated
+                    mt: 3, 
+                    mb: 2,
+                    backgroundColor: 'var(--button-bg)', 
+                    color: 'var(--button-text)',
+                    '&:hover': { backgroundColor: 'var(--button-hover-bg)' } 
+                  }}
                 data-testid="addmatchbutton"
               >
                 Add Match
