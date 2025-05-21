@@ -60,6 +60,7 @@ function Player(): JSX.Element {
             width: "100%",
             justifyContent: "center",
             display: "flex",
+            color: "var(--text-color)", // Explicitly set text color
           }}
         >
           Players List
